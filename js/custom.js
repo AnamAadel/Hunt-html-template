@@ -76,19 +76,19 @@ $(document).ready(function(){
       arrows: false,
       fade: true,
       asNavFor: '.testimon_content',
-      responsive: [
-        {
-          breakpoint: 1008,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-          },
-        },
-        {
-          breakpoint: 767,
-          settings: 'unslick',
-        },
-      ],
+      // responsive: [
+      //   {
+      //     breakpoint: 1008,
+      //     settings: {
+      //       slidesToShow: 1,
+      //       slidesToScroll: 1,
+      //     },
+      //   },
+      //   {
+      //     breakpoint: 767,
+      //     settings: 'unslick',
+      //   },
+      // ],
     });
     
     $('.testimon_content').slick({
@@ -103,17 +103,25 @@ $(document).ready(function(){
       centerMode: true,
       autoplay: true,
       vertical: true,
+      verticalSwiping: true,
       responsive: [
         {
           breakpoint: 1008,
           settings: {
             slidesToShow: 3,
             slidesToScroll: 1,
+            // vertical: true,
+            // verticalSwiping: true,
           },
         },
         {
           breakpoint: 767,
-          settings: 'unslick',
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            // vertical: false,
+            // verticalSwiping: false,
+          },
         },
       ],
     });

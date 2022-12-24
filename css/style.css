@@ -98,7 +98,6 @@ nav .navbar-nav{
     white-space: nowrap;
 }
 .navbar-dark .navbar-nav .nav-link{
-    padding: 0;
     color: var(--white);
     font-family: var(--Raleway);
     font-size: 16px;
@@ -115,8 +114,17 @@ nav .navbar-nav{
         background: var(--yellow);
         padding: 0 40px;
     }
+    nav.fixed .navbar-collapse.show{
+        background: none;
+        padding: 0 40px;
+    }
+    nav .navbar-nav{
+        gap: 0px;
+        align-items: center;
+    }
     .navbar-dark .navbar-nav .nav-link{
-        padding: 15px 0;
+        padding: 15px;
+        font-weight: 900;
     }
 }
 .navbar-dark .navbar-nav .nav-link span{
@@ -189,6 +197,7 @@ nav .navbar-nav{
  #hero .slick_fade .hero_text h2{
     font-size: 36px;
     font-weight: 400;
+    white-space: nowrap;
  }
  #hero .slick_fade .hero_text h2 span{
     transform: translateY(-50px);
@@ -562,7 +571,7 @@ nav .navbar-nav{
     width: 100%;
 }
 #testimonial .comment{
-    padding: 60px 30px;
+    padding: 60px;
     background: var(--cream);
     position: relative;
     z-index: 1;
@@ -584,22 +593,7 @@ nav .navbar-nav{
 .slick-slide{
     width: 133px;
 }
-@media screen and (max-width: 768px) {
-    #testimonial .testimon_content{
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        padding: 0 70px;
-    }
-    
-    #testimonial .comment::after{
-        display: none;
-    }
-    #testimonial .comment{
-        height: fit-content;
-    }
-}
+
 #testimonial .user_name{
     font-size: 20px;
     font-weight: 500;
@@ -637,8 +631,9 @@ nav .navbar-nav{
 #testimonial .test_arrows .test_up,#testimonial .test_arrows .test_down{
     width: 40px;
     aspect-ratio: 1/1;
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 22px;
     border-radius: 50%;
     border: 1px solid var(--white);
@@ -647,6 +642,35 @@ nav .navbar-nav{
 #testimonial .test_arrows .test_up:hover,#testimonial .test_arrows .test_down:hover{
     background: var(--yellow);
     border-color: var(--yellow);
+}
+@media screen and (max-width: 768px) {
+    #testimonial .testimon_content{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 0 70px;
+    }
+    
+    #testimonial .comment::after{
+        display: none;
+    }
+    #testimonial .comment{
+        height: fit-content;
+        padding: 30px 70px 30px 10px;
+    }
+    /* #testimonial .user_comment .slick-slide{
+        margin: 0 20px;
+    } */
+    #testimonial .test_arrows{
+        flex-direction: row;
+        width: 100%;
+        height: 50px;
+        left: 0;
+        top: calc(50% - 20px);
+        padding: 0 50px;
+    }
+
 }
 /*******###*****testimonials end***###*******
                 ****##****/
